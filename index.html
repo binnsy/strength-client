@@ -64,16 +64,15 @@
       </div>
       <div class="nav-buttons">
         <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
-        <form data-id='newExercise'>
-          <input type="text" name="Exercise name" placeholder="Exercise name">
-          <input type="date" name="date of exercise" placeholder="date of exercise">
-          <input type="text" name="Exercise description" placeholder="Exercise description">
-          <input type="text" name="Muscle Group" placeholder="Muscle Group">
-          <input type="text" name="Exercise Description" placeholder="Exercise Description">
-          <input type="text" name="Time" placeholder="Time">
-          <input type="text" name="Reps" placeholder="Number of reps">
-          <input type="text" name="Weight" placeholder="Weight">
-          <input id= "create" class="btn btn-success" type="button" type="submit" value="Create Exercise!">
+        <form id='create-exercise'>
+          <input type="text" name="exercise[exercise]" placeholder="Exercise name">
+          <input type="date" name="exercise[date]" placeholder="date of exercise">
+          <input type="text" name="exercise[description]" placeholder="Exercise description">
+          <input type="text" name="exercise[muscle_group]" placeholder="Muscle Group">
+          <input type="text" name="exercise[time]" placeholder="Time">
+          <input type="text" name="exercise[reps]" placeholder="Number of reps">
+          <input type="text" name="exercise[weight]" placeholder="Weight">
+          <input id= "create" class="btn btn-success" type="submit" value="Create Exercise!">
         </form>
         <button id="getExercisesButton" class="btn btn-outline-info">Get Exercises!</button>
         <button id="clearExercisesButton" class="btn btn-outline-info">Clear Exercises!</button>

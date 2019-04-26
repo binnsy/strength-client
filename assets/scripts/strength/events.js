@@ -9,7 +9,7 @@ const store = require('../store')
 const onCreateExercise = function (event) {
   event.preventDefault()
   console.log(event)
-
+// empty object
   const data = getFormFields(event.target)
   api.createExercise(data)
     .then(ui.createExerciseSuccess)
@@ -49,8 +49,8 @@ const onDeleteExercise = function (event) {
 }
 
 const addHandlers = function () {
-  $('#create').on('click', onCreateExercise)
-  $('#create').on('submit', onCreateExercise)
+//  $('#create').on('click', onCreateExercise)
+  $('#create-exercise').on('submit', onCreateExercise)
   $('#updateExercise').on('submit', onUpdateExercise)
   console.log('click create exercise')
   $('#getExercisesButton').on('click', onGetExercises)
