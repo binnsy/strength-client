@@ -42,26 +42,45 @@
       <h1>Strength Log</h1>
       <h5 id="motivational-quote">You're only limit is you!</h5>
 
-      <div id="createExercises">
+      <!-- <div id="createExerciseDiv">
         <button id="createExercise">Create Exercises</button>
+      </div> -->
+      <!-- <div id="message">
       </div>
-      <div id="message2">
+      <div id="deleteExerciseDiv">
+
       </div>
-      <div id="deleteExercises">
-          <button id="deleteGames">Delete Exercises</button>
+      <div id="message">
+      </div> -->
+      <!-- <div id="getExercisesDiv">
+        <button id="getExercises">Get Exercises</button>
+      </div> -->
+      <!-- <div id="message">
       </div>
-      <div id="message2">
+      <div id="updateExerciseDiv">
+-->
       </div>
-      <div id="getExercises">
-        <button id="getGames">Get Exercises</button>
+      <div id="message">
       </div>
-      <div id="message2">
+      <div class="nav-buttons">
+        <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
+        <form data-id='newExercise'>
+          <input type="text" name="Exercise name" placeholder="Exercise name">
+          <input type="date" name="date of exercise" placeholder="date of exercise">
+          <input type="text" name="Exercise description" placeholder="Exercise description">
+          <input type="text" name="Muscle Group" placeholder="Muscle Group">
+          <input type="text" name="Exercise Description" placeholder="Exercise Description">
+          <input type="text" name="Time" placeholder="Time">
+          <input type="text" name="Reps" placeholder="Number of reps">
+          <input type="text" name="Weight" placeholder="Weight">
+          <input id= "create" class="btn btn-success" type="button" type="submit" value="Create Exercise!">
+        </form>
+        <button id="getExercisesButton" class="btn btn-outline-info">Get Exercises!</button>
+        <button id="clearExercisesButton" class="btn btn-outline-info">Clear Exercises!</button>
+
+        <!-- <button id="deleteExercise" class="btn btn-danger">Delete Exercises</button> -->
       </div>
-      <div id="updateExercises">
-        <button id="updateExercises">Update Exercises</button>
-      </div>
-      <div id="message2">
-      </div>
+      <div id="content" class="content"></div>
       <footer> created by Alice </footer>
     </body>
 </html>

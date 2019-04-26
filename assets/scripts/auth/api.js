@@ -8,6 +8,7 @@ const signUp = function (data) {
     url: config.apiUrl + '/sign-up',
     method: 'POST',
     data
+
     // data: data
   })
 }
@@ -19,6 +20,7 @@ const signIn = function (data) {
     // data: data
   })
 }
+console.log("data")
 
 const changePassword = function (data) {
   return $.ajax({

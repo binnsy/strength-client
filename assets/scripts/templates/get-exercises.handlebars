@@ -1,0 +1,69 @@
+{{#each exercises as |exercise|}}
+  {{log exercise}}
+  <section data-id="{{exercise.id}}">
+    <h6>Exercise:</h6>
+    <p>
+      {{#if exercise.id}}
+        {{exercise.id}}
+      {{else}}
+
+      {{/if}}
+
+      {{#if exercise.exercise}}
+        {{exercise.exercise}}
+      {{else}}
+        No exercise provided.
+      {{/if}}
+
+      {{#if exercise.date}}
+        {{exercise.date}}
+      {{else}}
+        Date: -
+      {{/if}}
+
+      {{#if exercise.muscle_group}}
+        {{exercise.muscle_group}}
+      {{else}}
+        Muscle group: -
+      {{/if}}
+
+      {{#if exercise.description}}
+        {{exercise.description}}
+      {{else}}
+        Description: -
+      {{/if}}
+
+      {{#if exercise.time}}
+        {{exercise.time}}
+      {{else}}
+        Time: -
+      {{/if}}
+
+      {{#if exercise.reps}}
+        {{exercise.reps}}
+      {{else}}
+        Reps: -
+      {{/if}}
+
+      {{#if exercise.weigth}}
+        {{exercise.weight}}
+      {{else}}
+        Weight: -
+      {{/if}}
+    </p>
+
+  <button data-id="{{exercise.id}}" class='btn btn-danger delete'>Remove</button>
+  <button data-id="{{exercise.id}}" class="btn btn-info">Update Exercise</button>
+  <form data-id='newExercise'>
+    <input type="text" name="Exercise name" placeholder="Exercise name">
+    <input type="date" name="date of exercise" placeholder="date of exercise">
+    <input type="text" name="Exercise description" placeholder="Exercise description">
+    <input type="text" name="Muscle Group" placeholder="Muscle Group">
+    <input type="text" name="Exercise Description" placeholder="Exercise Description">
+    <input type="text" name="Time" placeholder="Time">
+    <input type="text" name="Reps" placeholder="Number of reps">
+    <input type="text" name="Weight" placeholder="Weight">
+    <input type="submit" value="Update!">
+  </form>
+    </section>
+{{/each}}
