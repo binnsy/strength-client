@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Strength Log</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,56 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <nav>
+  <form id="sign-up">
+    <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign Up!">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-in">
+    <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+    <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign In!">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="change-password">
+    <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="change-password">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-out">
+    <input type="submit" value="Sign-Out!">
+  </form>
+      </nav>
+      <h1>Strength Log</h1>
+      <h5 id="motivational-quote">You're only limit is you!</h5>
+
+      <div id="createExercises">
+        <button id="createExercise">Create Exercises</button>
+      </div>
+      <div id="message2">
+      </div>
+      <div id="deleteExercises">
+          <button id="deleteGames">Delete Exercises</button>
+      </div>
+      <div id="message2">
+      </div>
+      <div id="getExercises">
+        <button id="getGames">Get Exercises</button>
+      </div>
+      <div id="message2">
+      </div>
+      <div id="updateExercises">
+        <button id="updateExercises">Update Exercises</button>
+      </div>
+      <div id="message2">
+      </div>
+      <footer> created by Alice </footer>
     </body>
 </html>

@@ -1,1 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-image: url('public/db.jpeg');
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-color: rgb(40,40,40);
+  background-attachment: fixed;
+  background-position: center
+}
+// img.center {
+//     display: block;
+//     margin: 0 auto;
+// }
+  // width:100%;
+  // height: auto;
+  //position: absolute;
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 50%;
+// }
+// img{
+//     width:100%;
+//     height: auto;
+//     //position: absolute;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 50%;
+//
+// }
