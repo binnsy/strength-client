@@ -6,10 +6,14 @@ body {
   background-size: cover;
   // background-size: contain;
   background-repeat: no-repeat;
-
   background-color: rgb(40,40,40);
   background-attachment: fixed;
   background-position: center center;
+
+}
+
+.navbar {
+  width: 100%;
 
 }
 .modal-backdrop {
