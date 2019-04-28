@@ -12,6 +12,7 @@ $(() => {
   events.addHandlers()
   console.log('worked')
   userEvents.addHandlers()
+  // $('.modal-dialog').hide()
 })
 
 // $('.box').hide()

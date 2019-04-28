@@ -1,14 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  // background-image: url('public/db.jpeg');
+  background-image: url('public/db.jpeg');
   text-align: center;
-
+  background-size: cover;
+  // background-size: contain;
   background-repeat: no-repeat;
-  // background-color: rgb(40,40,40);
+
+  background-color: rgb(40,40,40);
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
+
 }
+.modal-backdrop {
+  z-index: -1;
+}
+
 // img.center {
 //     display: block;
 //     margin: 0 auto;

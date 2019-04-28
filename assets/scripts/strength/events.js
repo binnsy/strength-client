@@ -10,9 +10,11 @@ const onCreateExercise = function (event) {
   event.preventDefault()
   console.log(event)
 // empty object
-  const data = getFormFields(event.target)
+  let data = getFormFields(event.target)
   api.createExercise(data)
-    .then(ui.createExerciseSuccess)
+  ui.clearExercises()
+    // .then(onGetExercises(event))
+    // console.log('hi')
     .catch(ui.failure)
 }
 
@@ -23,6 +25,24 @@ const onClearExercises = (event) => {
 
 const onUpdateExercise = function (event) {
   event.preventDefault()
+  const id = $(event.target).data('id')
+  console.log(id)
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.updateExercise(id, data)
+    .then(() => onGetExercises(event))
+    .then(ui.catch)
+  // console.log(event)
+  // console.log('click')
+  // const id = $(event.target).data('id')
+  // console.log(id)
+  // const formData = getFormFields(event.target)
+  // console.log(formData)
+  // api.updateExercise(id, formData)
+
+  // .then(ui.updateExerciseSuccess)
+  // .then(onGetExercises(event))
+  // .catch(ui.failure)
 }
 
 // // Get all exercises user logged in has created
@@ -30,33 +50,43 @@ const onGetExercises = function (event) {
   event.preventDefault()
   console.log(event)
   console.log('hi')
-
+  ui.clearExercises()
   api.getExercises()
     .then(ui.getExercisesSuccess)
     .catch(ui.failure)
 }
 
-const onDeleteExercise = function (event) {
-  // event.preventDefault()
-// console.log(delete)
+const onDeleteExercise = (event) => {
+  event.preventDefault()
+  // console.log('hi')
   const id = $(event.target).data('id')
   console.log(id)
+  // store.id = data.id
+  // store.id = event.exercise
+  ui.clearExercises()
   api.deleteExercise(id)
+
+    // .then(ui.getExercisesSuccess)
+    .then(onGetExercises(event))
+    .catch(ui.failure)
+  //
+  // ui.getExercisesSuccess()
     // refresh the page
     // .then(() => onGetBooks(event))
-    .then(ui.onDeleteExercises(event))
-    .catch(ui.failure)
+
+    // .then(onGetExercises(event))
+    // .catch(ui.failure)
 }
 
 const addHandlers = function () {
 //  $('#create').on('click', onCreateExercise)
   $('#create-exercise').on('submit', onCreateExercise)
-  $('#updateExercise').on('submit', onUpdateExercise)
-  console.log('click create exercise')
+  $('#content').on('click', '.update', onUpdateExercise)
   $('#getExercisesButton').on('click', onGetExercises)
-  console.log('click create exercise')
   $('#clearExercisesButton').on('click', onClearExercises)
-  $('.delete').on('click', '.delete', onDeleteExercise)
+  $('#content').on('click', '.delete', onDeleteExercise)
+  $('#content').on('submit', '.update', onUpdateExercise)
+  // $('#content').on('submit', '.update', onUpdateExercise)
 }
 
 module.exports = {

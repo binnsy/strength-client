@@ -8,12 +8,20 @@ const createExerciseSuccess = function (data) {
   store.exercise = data.exercise
 }
 
-const updateExercise = (data) => {
+const updateExercise = (formData) => {
   console.log('trying to update')
+  store.id = formData.id
+  console.log(store.id)
+  console.log(formData)
+  // store.gameBoard = data.game
+  console.log(formData)
+  const getExercisesHtml = getExercisesTemplate({ exercises: formData.exercises })
+  $('.content').append(getExercisesHtml)
+  // console.log(exercise)
 }
 const getExercisesSuccess = (data) => {
   console.log(data)
-  $('#message').text('Exercises!')
+// $('#message').text('Exercises!')
   const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
   $('.content').append(getExercisesHtml)
 }
@@ -23,8 +31,8 @@ const clearExercises = () => {
 }
 
 const failure = (error) => {
-  // console.error(error)
-  $('#message').text('error')
+  console.error(error)
+  // $('#message').text('error')
 }
 
 // our songs data

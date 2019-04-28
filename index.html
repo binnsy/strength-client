@@ -12,6 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="container">
       <nav>
   <form id="sign-up">
     <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
@@ -60,6 +61,7 @@
       <div id="updateExerciseDiv">
 -->
       </div>
+
       <div id="message">
       </div>
       <div class="nav-buttons">
@@ -69,9 +71,20 @@
           <input type="date" name="exercise[date]" placeholder="date of exercise">
           <input type="text" name="exercise[description]" placeholder="Exercise description">
           <input type="text" name="exercise[muscle_group]" placeholder="Muscle Group">
+          <!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" name="exercise[muscle_group]" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Muscle Group
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Arms</a>
+    <a class="dropdown-item" href="#">Core</a>
+    <a class="dropdown-item" href="#">Legs</a>
+    <a class="dropdown-item" href="#">Glutes</a>
+  </div>
+</div> -->
           <input type="text" name="exercise[time]" placeholder="Time">
-          <input type="text" name="exercise[reps]" placeholder="Number of reps">
-          <input type="text" name="exercise[weight]" placeholder="Weight">
+          <input type="integer" name="exercise[reps]" placeholder="Number of reps">
+          <input type="decimal" name="exercise[weight]" placeholder="Weight">
           <input id= "create" class="btn btn-success" type="submit" value="Create Exercise!">
         </form>
         <button id="getExercisesButton" class="btn btn-outline-info">Get Exercises!</button>

@@ -33,7 +33,6 @@ const createExercise = function (data) {
   })
 }
 
-
 const getExercises = function () {
   return $.ajax({
     url: config.apiUrl + '/exercises',
@@ -54,15 +53,26 @@ const deleteExercise = function (id) {
   })
 }
 
-const updateExercise = function (id) {
+const updateExercise = function (id, data) {
   return $.ajax({
     url: config.apiUrl + `/exercises/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
+// const updateExercise = function (id, formData) {
+//   return $.ajax({
+//     url: config.apiUrl + '/exercises/' + formData.id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: formData
+//   })
+// }
 
 module.exports = {
   createExercise,
