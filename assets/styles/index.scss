@@ -16,9 +16,15 @@ body {
   width: 100%;
 
 }
+//
+// .modal-open .modal {
+//   background-color: rgba(0,0,0,0.5);
+//   -webkit-overflow-scrolling: auto;
+// }
 .modal-backdrop {
   z-index: -1;
 }
+// .modal + .modal-backdrop ~ .modal-backdrop {display:none}
 
 // img.center {
 //     display: block;

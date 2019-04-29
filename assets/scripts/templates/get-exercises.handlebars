@@ -48,31 +48,33 @@
     </p>
 
   <button data-id="{{exercise.id}}" class="btn btn-danger delete">Delete Exercise</button>
-  <button type=button data-toggle="modal" data-target="#update" class="btn btn-info update-modal">Update Exercise</button>
-  <div id=update class="model fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog"></div>
-  <div class="modal-content">
-    <div class="modal-header text-center">
-    <h4 class="modal-title font-weight-bold" id="updateExerciseTitle">Update Exercise</h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
+  <button type=button data-toggle="modal" data-target="#update-{{exercise.id}}" class="btn btn-info update-modal">Update Exercise</button>
+    <div id="update-{{exercise.id}}" class="model fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title font-weight-bold" id="updateExerciseTitle">Update Exercise</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-control update-form" data-id="{{exercise.id}}">
+              <input type="text" name="exercise[exercise]" value="{{exercise.exercise}}" required>
+              <input type="date" name="exercise[date]" placeholder="date of exercise">
+              <input type="text" name="exercise[description]" placeholder="Exercise description">
+              <input type="text" name="exercise[muscle_group]" placeholder="Muscle Group">
+              <input type="text" name="exercise[time]" placeholder="Time">
+              <input type="integer" name="exercise[reps]" placeholder="Number of reps">
+              <input type="decimal" name="exercise[weight]" placeholder="Weight">
+              <button type="submit" class="btn btn-info update">Update Exercise</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='modal-body'>
-      <form class="form-control" data-id='newExercise'>
-        <input type="text" name="exercise[exercise]" placeholder="Exercise name">
-        <input type="date" name="exercise[date]" placeholder="date of exercise">
-        <input type="text" name="exercise[description]" placeholder="Exercise description">
-        <input type="text" name="exercise[muscle_group]" placeholder="Muscle Group">
-        <input type="text" name="exercise[time]" placeholder="Time">
-        <input type="integer" name="exercise[reps]" placeholder="Number of reps">
-        <input type="decimal" name="exercise[weight]" placeholder="Weight">
-      </form>
-    </div>
-    <div class='modal-footer'>
-    <button data-id="{{exercise.id}}" type="submit" class="btn btn-info update">Update Exercise</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  </div>
-  </div>
-    </section>
+  </section>
 {{/each}}

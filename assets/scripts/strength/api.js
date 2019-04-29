@@ -53,7 +53,9 @@ const deleteExercise = function (id) {
   })
 }
 
-const updateExercise = function (id, data) {
+const updateExercise = function (data, id) {
+  console.log(data)
+  console.log(id)
   return $.ajax({
     url: config.apiUrl + `/exercises/${id}`,
     method: 'PATCH',

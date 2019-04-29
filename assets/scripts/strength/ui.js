@@ -8,14 +8,14 @@ const createExerciseSuccess = function (data) {
   store.exercise = data.exercise
 }
 
-const updateExercise = (formData) => {
+const updateExercise = (data) => {
   console.log('trying to update')
-  store.id = formData.id
-  console.log(store.id)
-  console.log(formData)
+  // store.id = formData.id
+  // console.log(store.id)
+  // console.log(formData)
   // store.gameBoard = data.game
-  console.log(formData)
-  const getExercisesHtml = getExercisesTemplate({ exercises: formData.exercises })
+  console.log(data)
+  const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
   $('.content').append(getExercisesHtml)
   // console.log(exercise)
 }
