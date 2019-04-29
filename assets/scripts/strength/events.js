@@ -8,13 +8,14 @@ const store = require('../store')
 
 const onCreateExercise = function (event) {
   event.preventDefault()
-  console.log(event)
-  // empty object
+  // console.log(event)
   const data = getFormFields(event.target)
-  console.log(data)
+  // console.log(data)
   api.createExercise(data)
-  ui.clearExercises()
-    .then(onGetExercises(event))
+    // .then(ui.clearExercises(event))
+    .then(function () { onGetExercises(event) })
+  //  .then(ui.createExerciseSuccess)
+    // .then(onGetExercises())
     // console.log('hi')
     .catch(ui.failure)
 }
@@ -26,15 +27,20 @@ const onClearExercises = (event) => {
 
 const onUpdateExercise = function (event) {
   event.preventDefault()
+  $('.modal-open').removeClass()
+  $('.fade').hide()
   const data = getFormFields(event.target)
   console.log(event)
-
   const id = $(event.target).data('id')
   console.log(id)
 
   api.updateExercise(data, id)
-    .then(() => onGetExercises(event))
-    .then(ui.catch)
+  .then(function () { onGetExercises(event) })
+    // .then(onClearExercises(event))
+    // .then(onGetExercises(event))
+  // ui.clearExercises()
+  //.then(() => onGetExercises(event))
+  // .then(ui.catch)
   // console.log(event)
   // console.log('click')
   // const id = $(event.target).data('id')
@@ -42,8 +48,8 @@ const onUpdateExercise = function (event) {
   // const formData = getFormFields(event.target)
   // console.log(formData)
   // api.updateExercise(id, formData)
+    // .then(ui.updateExerciseSuccess)
 
-  // .then(ui.updateExerciseSuccess)
   // .then(onGetExercises(event))
   // .catch(ui.failure)
 }
@@ -51,8 +57,8 @@ const onUpdateExercise = function (event) {
 // // Get all exercises user logged in has created
 const onGetExercises = function (event) {
   event.preventDefault()
-  console.log(event)
-  console.log('hi')
+  // console.log(event)
+  // console.log('hi')
   ui.clearExercises()
   api.getExercises()
     .then(ui.getExercisesSuccess)
@@ -68,9 +74,10 @@ const onDeleteExercise = (event) => {
   // store.id = event.exercise
   // ui.clearExercises()
   api.deleteExercise(id)
-    .then(ui.clearExercises())
-    // .then(ui.getExercisesSuccess)
-    .then(onGetExercises(event))
+    .then(function () { onGetExercises(event) })
+    // .then(ui.clearExercises())
+    // // .then(ui.getExercisesSuccess)
+    // .then(onGetExercises)
     .catch(ui.failure)
   //
   // ui.getExercisesSuccess()
@@ -88,6 +95,11 @@ const addHandlers = function () {
   $('#clearExercisesButton').on('click', onClearExercises)
   $('#content').on('click', '.delete', onDeleteExercise)
   $('#content').on('submit', '.update-form', onUpdateExercise)
+
+  // $('.fade').hide()
+  // $('.fade').show('click', '.update-modal')
+  // $('.fade').hide('click', '#content')
+
   // $('#content').on('submit', '.update', onUpdateExercise)
 }
 

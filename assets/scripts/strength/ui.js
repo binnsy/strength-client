@@ -6,24 +6,25 @@ const createExerciseSuccess = function (data) {
   $('#message').text('New exercise has been created!')
   console.log(data)
   store.exercise = data.exercise
-}
 
-const updateExercise = (data) => {
+}
+// remove class from body and remove backdrop class elements
+const updateExerciseSuccess = (data) => {
   console.log('trying to update')
-  // store.id = formData.id
-  // console.log(store.id)
-  // console.log(formData)
-  // store.gameBoard = data.game
+  clearExercises()
   console.log(data)
-  const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
-  $('.content').append(getExercisesHtml)
-  // console.log(exercise)
+  $('.content').empty()
+  // const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
+  // $('.content').append(getExercisesHtml)
+
 }
 const getExercisesSuccess = (data) => {
   console.log(data)
+
 // $('#message').text('Exercises!')
   const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
   $('.content').append(getExercisesHtml)
+  $('.fade').hide()
 }
 
 const clearExercises = () => {
@@ -50,5 +51,5 @@ module.exports = {
   getExercisesSuccess,
   clearExercises,
   failure,
-  updateExercise
+  updateExerciseSuccess
 }
