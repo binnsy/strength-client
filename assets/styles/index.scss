@@ -9,20 +9,41 @@ body {
   background-color: rgb(40,40,40);
   background-attachment: fixed;
   background-position: center center;
-
+  height: 100%;
 }
-
+p {
+  font-size: 17px;
+}
+#create-exercise {
+  margin: 10px 10% 10px 10%;
+}
 .navbar {
   width: 100%;
-
 }
-//
+.nav-buttons {
+  padding-bottom: 20px;
+}
+.box {
+  border: solid;
+  border-width: 2px;
+  padding: 10px;
+  margin: 10px 25% 10px 25%;
+  box-sizing: content-box;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
 // .modal-open .modal {
 //   background-color: rgba(0,0,0,0.5);
 //   -webkit-overflow-scrolling: auto;
 // }
 .modal-backdrop {
   z-index: -1;
+}
+.modal {
+  text-align: center;
 }
 // .modal + .modal-backdrop ~ .modal-backdrop {display:none}
 
