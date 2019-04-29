@@ -2,61 +2,68 @@
   {{log exercise}}
   <section class='box' data-id="{{exercise.id}}">
     <h4 style="text-transform: capitalize">Exercise:
-<small>
+<medium>
       {{#if exercise.exercise}}
         {{exercise.exercise}}
       {{else}}
         No exercise provided.
 
       {{/if}}
-    </small>
-    </h4>
-      <h6>Date:</h6> <p>
+    </medium>
+  </h5>
+    <h5 style="text-transform: capitalize">Date:
+<small>
       {{#if exercise.date}}
         {{exercise.date}}
       {{else}}
 
       {{/if}}
-    </p>
-    <h6>Muscle group:</h6>
-<p>
+    </small>
+  </h5>
+  <h5 style="text-transform: capitalize">Muscle Group:
+<small>
       {{#if exercise.muscle_group}}
         {{exercise.muscle_group}}
       {{else}}
 
       {{/if}}
-    </p>
-    <h6>Description:</h6>
-<p>
+    </small>
+  </h5>
+  <h5 style="text-transform: capitalize">description:
+<small>
       {{#if exercise.description}}
         {{exercise.description}}
       {{else}}
 
       {{/if}}
-    </p>
-    <h6>Time:</h6>
-<p>
+    </small>
+  </h5>
+  <h5 style="text-transform: capitalize">Time:
+<small>
       {{#if exercise.time}}
         {{exercise.time}}
       {{else}}
 
       {{/if}}
-    </p>
-    <h6>Reps:</h6>
-<p>
+    </small>
+  </h5>
+  <h5 style="text-transform: capitalize">Reps:
+<small>
       {{#if exercise.reps}}
         {{exercise.reps}}
       {{else}}
 
       {{/if}}
-    </p>
-    <h6>Weight:</h6>
-    <p>
+    </small>
+  </h5>
+  <h5 style="text-transform: capitalize">Weigth:
+<small>
       {{#if exercise.weigth}}
         {{exercise.weight}}
       {{else}}
       {{/if}}
-    </p>
+    </small>
+  </h5>
 <div class="exercise-container">
   <button data-id="{{exercise.id}}" class="btn btn-danger delete">Delete Exercise</button>
   <button type=button data-toggle="modal" data-target="#update-{{exercise.id}}" class="btn btn-info update-modal">Update Exercise</button>
