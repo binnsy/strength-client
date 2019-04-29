@@ -4,14 +4,17 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('#message').text('Congrats! You have signed up successfully. Now sign in to get started!')
+  // setTimeout(function () {
+  //   $('#message').fadeOut('slow')
+  // }, 2000)
   console.log('sign up successful')
-  // $('form').trigger('reset')
-  // $('#sign-up').hide()
+  $('form').trigger('reset')
+  $('#sign-up').hide()
   // $('.box').show()
-  // $('#sign-out').show()
-  // $('#reset').hide()
-  // $('#getGames').show()
-  // $('#sign-in').show()
+  $('#sign-out').show()
+  $('#reset').hide()
+  $('#getGames').show()
+  $('#sign-in').show()
 }
 
 const signUpFailure = function (data) {
@@ -21,25 +24,28 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Congrats you have successfully signed in! Click Create New Game to get started!')
+  $('#message').text('Congrats you have successfully signed in!')
   // $('#message').css('color', 'green')
+  // setTimeout(function () {
+  //   $('#message').fadeOut('slow')
+  // }, 2000)
   store.user = data.user
   console.log('sign in successful')
   $('form').trigger('reset')
-  // $('#sign-up').hide()
+  $('#sign-up').hide()
   // $('.box').show()
-  // $('#sign-out').show()
+  $('#sign-out').show()
   // $('#reset').show()
-  // $('#getGames').show()
-  // $('#change-password').show()
-  // $('#sign-in').hide()
+  $('#getExercises').show()
+  $('#change-password').show()
+  $('#sign-in').hide()
 }
 
 const signInFailure = function (data) {
   $('#message').text('Sorry something went wrong! Please try again.')
   $('form').trigger('reset')
   // // $('#message').css('color', 'red')
-  // $('#sign-up').show()
+  $('#sign-up').show()
 }
 
 const changePasswordSuccess = function (data) {
@@ -56,13 +62,13 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function (data) {
   $('#message').text('Sign out successful!')
   $('form').trigger('reset')
-  // $('#sign-in').show()
-  // $('#sign-up').show()
-  // $('#change-password').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#change-password').hide()
   // $('.row').hide()
   // $('#reset').hide()
-  // $('#sign-out').hide()
-  // $('#getGames').hide()
+  $('#sign-out').hide()
+  $('#getExercises').hide()
   // $('#message2').hide()
 
   store.user = null
