@@ -53,7 +53,7 @@
       </nav>
       <div class="container">
       <h1>Strength Log</h1>
-      <h5 id="motivational-quote">You're only limit is you!</h5>
+      <h3 id="motivational-quote">You're only limit is you!</h3>
 
       <!-- <div id="createExerciseDiv">
         <button id="createExercise">Create Exercises</button>
@@ -79,10 +79,10 @@
       <div class="nav-buttons">
         <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
         <form id='create-exercise'>
-          <input type="text" name="exercise[exercise]" placeholder="Exercise name">
-          <input type="date" name="exercise[date]" placeholder="date of exercise">
-          <input type="text" name="exercise[description]" placeholder="Exercise description">
-          <input type="text" name="exercise[muscle_group]" placeholder="Muscle Group">
+          <input type="text" class="form-control" name="exercise[exercise]" placeholder="Exercise name">
+          <input type="date" class="form-control" name="exercise[date]" placeholder="date of exercise">
+          <input type="text" class="form-control" name="exercise[description]" placeholder="Exercise description">
+          <input type="text" class="form-control" name="exercise[muscle_group]" placeholder="Muscle Group">
           <!-- <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" name="exercise[muscle_group]" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Muscle Group
@@ -94,13 +94,13 @@
     <a class="dropdown-item" href="#">Glutes</a>
   </div>
 </div> -->
-          <input type="text" name="exercise[time]" placeholder="Time">
-          <input type="integer" name="exercise[reps]" placeholder="Number of reps">
-          <input type="decimal" name="exercise[weight]" placeholder="Weight">
-          <input id= "create" class="btn btn-success" type="submit" value="Create Exercise!">
+          <input type="text" class="form-control" name="exercise[time]" placeholder="Time">
+          <input type="integer" class="form-control" name="exercise[reps]" placeholder="Number of reps">
+          <input type="decimal" class="form-control" name="exercise[weight]" placeholder="Weight">
+          <input id= "create" class="btn btn-dark" type="submit" value="Create Exercise!">
         </form>
-        <button id="getExercisesButton" class="btn btn-outline-info">Get Exercises!</button>
-        <button id="clearExercisesButton" class="btn btn-outline-info">Clear Exercises!</button>
+        <button id="getExercisesButton" class="btn btn-outline-dark">Exercise Log!</button>
+        <button id="clearExercisesButton" class="btn btn-outline-dark">Clear Exercises!</button>
 
         <!-- <button id="deleteExercise" class="btn btn-danger">Delete Exercises</button> -->
       </div>

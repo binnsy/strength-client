@@ -14,9 +14,9 @@ $(() => {
   userEvents.addHandlers()
 })
 
-// $('.box').hide()
+$('.nav-buttons').hide()
 // $('#reset').hide()
-// $('#getGames').hide()
+$('#sign-out').hide()
 // $('.row').hide()
-// $('#change-password').hide()
+$('#change-password').hide()
 // })
