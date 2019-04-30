@@ -76,9 +76,11 @@
 
       <div id="message">
       </div>
+      <div id="message2">
+      </div>
       <div class="nav-buttons">
         <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
-        <form id='create-exercise'>
+        <form id="create-exercise">
           <input type="text" class="form-control" name="exercise[exercise]" placeholder="Exercise name">
           <input type="date" class="form-control" name="exercise[date]" placeholder="date of exercise">
           <input type="text" class="form-control" name="exercise[description]" placeholder="Exercise description">
@@ -95,8 +97,8 @@
   </div>
 </div> -->
           <input type="text" class="form-control" name="exercise[time]" placeholder="Time">
-          <input type="integer" class="form-control" name="exercise[reps]" placeholder="Number of reps">
-          <input type="decimal" class="form-control" name="exercise[weight]" placeholder="Weight">
+          <input type="text" class="form-control" name="exercise[reps]" placeholder="Number of reps">
+          <input type="text" class="form-control" name="exercise[weight]" placeholder="Weight">
           <input id= "create" class="btn btn-dark" type="submit" value="Create Exercise!">
         </form>
         <button id="getExercisesButton" class="btn btn-outline-dark">Exercise Log!</button>

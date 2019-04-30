@@ -3,17 +3,34 @@ const store = require('../store')
 const getExercisesTemplate = require('../templates/get-exercises.handlebars')
 //
 const createExerciseSuccess = function (data) {
-  $('#message').text('New exercise has been created!')
-  console.log(data)
-  store.exercise = data.exercise
 
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 5000)
+  $('#message2').text('Congrats you exercise was logged!')
+  // $('#create-exercise').trigger('reset')
+}
+  // console.log(data)
+  // store.exercise = data.exercise
+const createExerciseFailure = function (data) {
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 5000)
+  $('#message2').text('We had trouble logging your exercise! Make sure Exercise name is filled out.')
 }
 // remove class from body and remove backdrop class elements
 const updateExerciseSuccess = (data) => {
-  console.log('trying to update')
-  clearExercises()
-  console.log(data)
-  $('.content').empty()
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 5000)
+  $('#message2').text('Your exercise has been updated!')
+  // console.log('trying to update')
+  // clearExercises()
+  // console.log(data)
+  // $('.content').empty()
   // const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
   // $('.content').append(getExercisesHtml)
 
@@ -47,7 +64,7 @@ const failure = (error) => {
 
 module.exports = {
   createExerciseSuccess,
-  // createExerciseFailure,
+  createExerciseFailure,
   getExercisesSuccess,
   clearExercises,
   failure,

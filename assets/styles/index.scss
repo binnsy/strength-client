@@ -1,12 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-image: url('public/db.jpeg');
+  background-image: url('public/strength2.jpeg');
   text-align: center;
+  color: white;
   background-size: cover;
   // background-size: contain;
   background-repeat: no-repeat;
-  background-color: rgb(40,40,40);
+  background-color: rgb(29,29,29);
   background-attachment: fixed;
   background-position: center center;
   height: 100%;
@@ -17,30 +18,50 @@ p {
 h1 {
   margin: 20px;
 }
+button {
+  margin: 2px;
+}
+input {
+  margin: 2px;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
 
+}
 .btn-outline-dark {
 margin: 20px;
+padding-top: 5px;
 }
+
 #create-exercise {
   border: 2px solid;
   padding: 15px;
   box-sizing: content-box;
-  padding: 20px;
-  box-shadow: 5px 10px;
-  margin: 10px 20% 10px 20%;
+  padding: 2% 3% 2% 3%;
+  box-shadow: 5px 10px #494444;
+  margin: 10px 30% 10px 30%;
+  background-color: #181616;
+  text-align: center;
 }
 .navbar {
   width: 100%;
+  background-color: rgb(19,19,19)
 }
 .nav-buttons {
   padding-bottom: 20px;
+  width: auto;
 }
 .box {
-  border: solid;
+  border: 2px solid;
   border-width: 2px;
-  padding: 15px;
-  margin: 15px 25% 15px 25%;
+  padding: 25px;
+  box-shadow: 5px 10px #494444;
+  margin: 2%;
+  margin-left: 5%;
+  // margin: 25px 25% 25px 25%;
   box-sizing: content-box;
+  background-color: #1C1C1C;
 }
 .vertical-align-center {
     /* To center vertically */
@@ -56,6 +77,15 @@ margin: 20px;
 }
 .modal {
   text-align: center;
+  content-box: center;
+}
+.form-control {
+  width: auto;
+  text-align: center;
+  margin: 2px auto;
+}
+footer {
+  bottom: auto;
 }
 // .modal + .modal-backdrop ~ .modal-backdrop {display:none}
 

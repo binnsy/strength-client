@@ -8,16 +8,22 @@ const store = require('../store')
 
 const onCreateExercise = function (event) {
   event.preventDefault()
+
   // console.log(event)
   const data = getFormFields(event.target)
   // console.log(data)
+
+  console.log(data)
+  // if data.weight == String
   api.createExercise(data)
-    // .then(ui.clearExercises(event))
+  // .then(ui.clearExercises(event))
     .then(function () { onGetExercises(event) })
+    // $('form').trigger('reset')
   //  .then(ui.createExerciseSuccess)
     // .then(onGetExercises())
     // console.log('hi')
-    .catch(ui.failure)
+    .then(ui.createExerciseSuccess)
+    .catch(ui.createExerciseFailure)
 }
 
 const onClearExercises = (event) => {
@@ -67,6 +73,12 @@ const onGetExercises = function (event) {
 
 const onDeleteExercise = (event) => {
   event.preventDefault()
+  $('#message2').show()
+  $('#message2').text('Your exercise was deleted!')
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  // $('#message2').trigger('reset')
   // console.log('hi')
   const id = $(event.target).data('id')
   console.log(id)

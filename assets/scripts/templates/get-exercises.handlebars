@@ -1,13 +1,13 @@
 {{#each exercises as |exercise|}}
   {{log exercise}}
-  <section class='box' data-id="{{exercise.id}}">
+
+  <section class="box col-sm-4" data-id="{{exercise.id}}">
     <h4 style="text-transform: capitalize">Exercise:
 <medium>
       {{#if exercise.exercise}}
         {{exercise.exercise}}
       {{else}}
         No exercise provided.
-
       {{/if}}
     </medium>
   </h5>
@@ -16,7 +16,7 @@
       {{#if exercise.date}}
         {{exercise.date}}
       {{else}}
-
+      -
       {{/if}}
     </small>
   </h5>
@@ -25,7 +25,7 @@
       {{#if exercise.muscle_group}}
         {{exercise.muscle_group}}
       {{else}}
-
+      -
       {{/if}}
     </small>
   </h5>
@@ -34,7 +34,7 @@
       {{#if exercise.description}}
         {{exercise.description}}
       {{else}}
-
+      -
       {{/if}}
     </small>
   </h5>
@@ -43,7 +43,7 @@
       {{#if exercise.time}}
         {{exercise.time}}
       {{else}}
-
+      -
       {{/if}}
     </small>
   </h5>
@@ -52,7 +52,7 @@
       {{#if exercise.reps}}
         {{exercise.reps}}
       {{else}}
-
+      -
       {{/if}}
     </small>
   </h5>
@@ -61,12 +61,16 @@
       {{#if exercise.weigth}}
         {{exercise.weight}}
       {{else}}
+      -
       {{/if}}
     </small>
   </h5>
+
 <div class="exercise-container">
   <button data-id="{{exercise.id}}" class="btn btn-danger delete">Delete Exercise</button>
   <button type=button data-toggle="modal" data-target="#update-{{exercise.id}}" class="btn btn-info update-modal">Update Exercise</button>
+</div>
+
     <div id="update-{{exercise.id}}" class="model fade" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -75,17 +79,17 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-
         </div>
+        <!-- <div class='row' -->
           <div class="modal-body vertical-align-center">
             <form class="update-form" data-id="{{exercise.id}}">
-              <input type="text" class="form-control" name="exercise[exercise]" value="{{exercise.exercise}}" required>
-              <input type="date" class="form-control" name="exercise[date]" value="{{exercise.date}}" placeholder="date of exercise">
+              <input type="text" class="form-control" Width="89px" name="exercise[exercise]" value="{{exercise.exercise}}" required>
+              <input type="date" class="form-control" Width="89px" name="exercise[date]" value="{{exercise.date}}" placeholder="date of exercise">
               <input type="text" class="form-control" name="exercise[description]" value="{{exercise.description}}" placeholder="Exercise description">
               <input type="text" class="form-control" name="exercise[muscle_group]" value="{{exercise.muscle_group}}" placeholder="Muscle Group">
               <input type="text" class="form-control" name="exercise[time]" value="{{exercise.time}}" placeholder="Time">
-              <input type="integer" class="form-control" name="exercise[reps]" value="{{exercise.reps}}" placeholder="Number of reps">
-              <input type="decimal" class="form-control" name="exercise[weight]" value="{{exercise.weigth}}" placeholder="Weight">
+              <input type="text" class="form-control" name="exercise[reps]" value="{{exercise.reps}}" placeholder="Number of reps">
+              <input type="text" class="form-control" name="exercise[weight]" value="{{exercise.weigth}}" placeholder="Weight">
               <button type="submit" class="form-control btn btn-info update">Update Exercise</button>
             </form>
           </div>
@@ -93,8 +97,8 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
+        </div>
       </div>
     </div>
-      </div>
   </section>
 {{/each}}

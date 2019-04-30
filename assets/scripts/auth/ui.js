@@ -24,8 +24,11 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
+  setTimeout(function () {
+    $('#message').fadeOut('slow')
+  }, 2000)
   $('#message').text('Congrats you have successfully signed in!')
-  // $('#message').css('color', 'green')
+  $('#message2').text('Create an exercise or view your exercise log!')
   // setTimeout(function () {
   //   $('#message').fadeOut('slow')
   // }, 2000)
@@ -70,6 +73,7 @@ const signOutSuccess = function (data) {
   $('#change-password').hide()
   // $('.row').hide()
   // $('#reset').hide()
+  $('.nav-buttons').hide()
   $('#sign-out').hide()
   $('#getExercises').hide()
   // $('#message2').hide()
