@@ -45,11 +45,14 @@ input {
   border: 2px solid;
   padding: 15px;
   box-sizing: content-box;
-  padding: 4% 10% 4% 10%;
+  // padding: 1;
   box-shadow: 5px 10px #494444;
-  margin: 10px 30% 10px 30%;
+  margin: 10px 16vw;
+  width: 60vw;
   background-color: #181616;
-  text-align: center;
+  // justify-content: center;
+  // align-items: center;
+  // margin: auto 0;
 }
 .navbar {
   width: 100%;
@@ -57,9 +60,13 @@ input {
 }
 .nav-buttons {
   padding-bottom: 20px;
-  width: auto;
+  width: 70vw;
   display: flex-wrap;
   text-align: center;
+  // justify-content: center;
+  // align-items: center;
+  // margin: auto 0;
+
 }
 .modal-title {
   color: black;
