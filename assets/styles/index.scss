@@ -19,7 +19,7 @@ h1 {
   margin: 20px;
 }
 button {
-  margin: 2px;
+  margin: 2px
 }
 input {
   margin: 2px;
@@ -27,18 +27,18 @@ input {
 #content {
   display: flex;
   flex-wrap: wrap;
+}
 
-}
-.btn-outline-dark {
-margin: 20px;
-padding-top: 5px;
-}
+// .btn-outline-dark {
+// margin: 20px;
+// padding-top: 5px;
+// }
 
 #create-exercise {
   border: 2px solid;
   padding: 15px;
   box-sizing: content-box;
-  padding: 2% 3% 2% 3%;
+  padding: 2% 10% 2% 10%;
   box-shadow: 5px 10px #494444;
   margin: 10px 30% 10px 30%;
   background-color: #181616;
@@ -51,7 +51,14 @@ padding-top: 5px;
 .nav-buttons {
   padding-bottom: 20px;
   width: auto;
+  display: flex-wrap;
+  text-align: center;
 }
+// .nav-buttons {
+//   text-align: center;
+//   display: flex-wrap;
+//
+// }
 .box {
   border: 2px solid;
   border-width: 2px;
@@ -79,11 +86,11 @@ padding-top: 5px;
   text-align: center;
   content-box: center;
 }
-.form-control {
-  width: auto;
-  text-align: center;
-  margin: 2px auto;
-}
+// .form-control {
+//   width: auto;
+//   text-align: center;
+//   margin: 2px auto;
+// }
 footer {
   bottom: auto;
 }
