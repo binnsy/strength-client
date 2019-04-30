@@ -5,7 +5,6 @@ body {
   text-align: center;
   color: white;
   background-size: cover;
-  // background-size: contain;
   background-repeat: no-repeat;
   background-color: rgb(29,29,29);
   background-attachment: fixed;
@@ -20,7 +19,6 @@ h1 {
 }
 .btn {
   padding: 5px;
-
 }
 #getExercisesButton{
 background-color: #e7e7e7;
@@ -37,52 +35,38 @@ input {
   display: flex;
   flex-wrap: wrap;
 }
-
-// .btn-outline-dark {
-// margin: 20px;
-// padding-top: 5px;
-// }
-
 #create-exercise {
   border: 2px solid;
   padding: 25px;
   box-sizing: content-box;
-  // padding: 1;
   box-shadow: 5px 10px #494444;
   margin: 10px 16vw;
   width: 60vw;
   background-color: #181616;
-  // justify-content: center;
-  // align-items: center;
-  // margin: auto 0;
 }
-.navbar {
-  width: 100%;
+#sign-up {
+  width: 100vw;
   background-color: rgb(19,19,19)
+  display: flex-wrap;
+}
+#sign-in {
+  width: 100vw;
+  background-color: rgb(19,19,19)
+  display: flex-wrap;
 }
 .nav-buttons {
   padding-bottom: 20px;
   width: 100vw;
   display: flex-wrap;
   text-align: center;
-  // justify-content: center;
-  // align-items: center;
-  // margin: auto 0;
+  align-content: center;
 }
-.main-page-buttons {
-  // margin: auto 0;
-  // margin: 10px 16vw;
-  align-items: flex-end;
-
-}
+// .main-page-buttons {
+//   align-items: flex-end;
+// }
 .modal-title {
   color: black;
 }
-// .nav-buttons {
-//   text-align: center;
-//   display: flex-wrap;
-//
-// }
 .box {
   border: 2px solid;
   border-width: 2px;
@@ -90,20 +74,13 @@ input {
   box-shadow: 5px 10px #494444;
   margin: 3%;
   width: 100vw;
-  // margin-left: 5%;
-  // margin: 25px 25% 25px 25%;
   box-sizing: content-box;
   background-color: #1C1C1C;
 }
 .vertical-align-center {
-    /* To center vertically */
     display: table-cell;
     vertical-align: middle;
 }
-// .modal-open .modal {
-//   background-color: rgba(0,0,0,0.5);
-//   -webkit-overflow-scrolling: auto;
-// }
 .modal-backdrop {
   z-index: -1;
 }
@@ -111,35 +88,6 @@ input {
   text-align: center;
   content-box: center;
 }
-// .form-control {
-//   width: auto;
-//   text-align: center;
-//   margin: 2px auto;
-// }
 footer {
   bottom: auto;
 }
-// .modal + .modal-backdrop ~ .modal-backdrop {display:none}
-
-// img.center {
-//     display: block;
-//     margin: 0 auto;
-// }
-// width:100%;
-// height: auto;
-//position: absolute;
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: 50%;
-// }
-// img{
-//     width:100%;
-//     height: auto;
-//     //position: absolute;
-//     display: block;
-//     margin-left: auto;
-//     margin-right: auto;
-//     width: 50%;
-//
-// }
