@@ -18,8 +18,15 @@ p {
 h1 {
   margin: 20px;
 }
-button {
-  margin: 2px
+.btn {
+  padding: 5px;
+
+}
+#getExercisesButton{
+background-color: #e7e7e7;
+}
+#clearExercisesButton{
+background-color: #e7e7e7;
 }
 input {
   margin: 2px;
@@ -38,7 +45,7 @@ input {
   border: 2px solid;
   padding: 15px;
   box-sizing: content-box;
-  padding: 2% 10% 2% 10%;
+  padding: 4% 10% 4% 10%;
   box-shadow: 5px 10px #494444;
   margin: 10px 30% 10px 30%;
   background-color: #181616;
@@ -53,6 +60,9 @@ input {
   width: auto;
   display: flex-wrap;
   text-align: center;
+}
+.modal-title {
+  color: black;
 }
 // .nav-buttons {
 //   text-align: center;

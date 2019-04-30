@@ -41,7 +41,9 @@ const onUpdateExercise = function (event) {
   console.log(id)
 
   api.updateExercise(data, id)
-  .then(function () { onGetExercises(event) })
+    .then(function () { onGetExercises(event) })
+    .then(ui.updateExerciseSuccess)
+    .catch(ui.updateExerciseFailure)
     // .then(onClearExercises(event))
     // .then(onGetExercises(event))
   // ui.clearExercises()

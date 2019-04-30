@@ -10,11 +10,12 @@ const signUpSuccess = function (data) {
   console.log('sign up successful')
   $('form').trigger('reset')
   $('#sign-up').hide()
-  // $('.box').show()
+
   $('#sign-out').show()
   $('#reset').hide()
   $('#getGames').show()
   $('#sign-in').show()
+  // $('#message2').show()
 }
 
 const signUpFailure = function (data) {
@@ -24,6 +25,9 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
+  $('#message2').show()
+  $('#message').show()
+  $('#content.content').show()
   setTimeout(function () {
     $('#message').fadeOut('slow')
   }, 2000)
@@ -48,31 +52,40 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (data) {
-  $('#message').text('Sorry something went wrong! Please try again.')
+  $('#message2').text('Sorry something went wrong! Please try again.')
   $('form').trigger('reset')
   // // $('#message').css('color', 'red')
   $('#sign-up').show()
 }
 
 const changePasswordSuccess = function (data) {
-  $('#message').text('You have successfully changed your password!')
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  $('#message2').text('You have successfully changed your password!')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (data) {
-  $('#message').text('Change password failure. Please try again.')
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  $('#message2').text('Change password failure. Please try again.')
   // $('#message').css('color', 'red')
   $('form').trigger('reset')
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('Sign out successful!')
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  $('#message2').text('Sign out successful!')
   $('form').trigger('reset')
   $('#sign-in').show()
   $('#sign-up').show()
   $('#change-password').hide()
-  // $('.row').hide()
-  // $('#reset').hide()
+  // $('#message2').hide()
+  $('#content.content').hide()
   $('.nav-buttons').hide()
   $('#sign-out').hide()
   $('#getExercises').hide()

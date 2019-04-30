@@ -68,7 +68,7 @@
 
 
   <button data-id="{{exercise.id}}" class="btn btn-danger delete">Delete Exercise</button>
-  <button type=button data-toggle="modal" data-target="#update-{{exercise.id}}" class="btn btn-info update-modal">Update Exercise</button>
+  <button type=button data-toggle="modal" data-target="#update-{{exercise.id}}" class="btn btn-secondary update-modal">Update Exercise</button>
 
 
     <div id="update-{{exercise.id}}" class="model fade" tabindex="-1" role="dialog" aria-labelledby="updateExercise" aria-hidden="true">
@@ -89,7 +89,7 @@
               <input type="text" class="form-control" name="exercise[time]" value="{{exercise.time}}" placeholder="Time">
               <input type="text" class="form-control" name="exercise[reps]" value="{{exercise.reps}}" placeholder="Number of reps">
               <input type="text" class="form-control" name="exercise[weight]" value="{{exercise.weigth}}" placeholder="Weight">
-              <button type="submit" class="form-control btn btn-info update">Update Exercise</button>
+              <button type="submit" class="form-control btn btn-secondary update">Update Exercise</button>
             </form>
           </div>
           <div class="modal-footer">
