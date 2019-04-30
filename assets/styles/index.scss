@@ -24,9 +24,11 @@ h1 {
 }
 #getExercisesButton{
 background-color: #e7e7e7;
+margin-top: 5px;
 }
 #clearExercisesButton{
 background-color: #e7e7e7;
+margin-top: 5px;
 }
 input {
   margin: 2px;
@@ -43,7 +45,7 @@ input {
 
 #create-exercise {
   border: 2px solid;
-  padding: 15px;
+  padding: 25px;
   box-sizing: content-box;
   // padding: 1;
   box-shadow: 5px 10px #494444;
@@ -60,12 +62,17 @@ input {
 }
 .nav-buttons {
   padding-bottom: 20px;
-  width: 70vw;
+  width: 100vw;
   display: flex-wrap;
   text-align: center;
   // justify-content: center;
   // align-items: center;
   // margin: auto 0;
+}
+.main-page-buttons {
+  // margin: auto 0;
+  // margin: 10px 16vw;
+  align-items: flex-end;
 
 }
 .modal-title {
@@ -81,8 +88,9 @@ input {
   border-width: 2px;
   padding: 25px;
   box-shadow: 5px 10px #494444;
-  margin: 2%;
-  margin-left: 5%;
+  margin: 3%;
+  width: 100vw;
+  // margin-left: 5%;
   // margin: 25px 25% 25px 25%;
   box-sizing: content-box;
   background-color: #1C1C1C;
