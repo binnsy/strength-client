@@ -16,6 +16,7 @@ p {
 }
 h1 {
   margin: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .btn {
   padding: 5px;
@@ -43,6 +44,14 @@ input {
   margin: 10px 16vw;
   width: 60vw;
   background-color: #181616;
+}
+#message2 {
+  color: white;
+  background-color: rgba(62, 62, 62, 0.6);
+}
+#message {
+  color: white;
+  background-color: rgba(62, 62, 62, 0.6);
 }
 #sign-up {
   width: 100vw;
@@ -76,6 +85,10 @@ input {
   width: 100vw;
   box-sizing: content-box;
   background-color: #1C1C1C;
+}
+
+#motivational-quote {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .vertical-align-center {
     display: table-cell;
