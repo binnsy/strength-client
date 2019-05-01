@@ -20,7 +20,7 @@ const signIn = function (data) {
     // data: data
   })
 }
-console.log("data")
+// console.log("data")
 
 const changePassword = function (data) {
   return $.ajax({

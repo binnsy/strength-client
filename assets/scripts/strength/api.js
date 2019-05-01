@@ -3,7 +3,7 @@ const store = require('../store')
 
 // Same as updateGame
 const createExercise = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/exercises/',
     method: 'POST',
@@ -54,8 +54,8 @@ const deleteExercise = function (id) {
 }
 
 const updateExercise = function (data, id) {
-  console.log(data)
-  console.log(id)
+  // console.log(data)
+  // console.log(id)
   return $.ajax({
     url: config.apiUrl + `/exercises/${id}`,
     method: 'PATCH',

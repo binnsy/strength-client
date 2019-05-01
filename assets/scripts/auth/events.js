@@ -16,7 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('trying to sign in')
+  // console.log('trying to sign in')
 
   const data = getFormFields(event.target)
   // console.log(data)
@@ -44,9 +44,9 @@ const onSignOut = function (event) {
 
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
-  console.log('clicked sign-up')
+  // console.log('clicked sign-up')
   $('#sign-in').on('submit', onSignIn)
-  console.log('clicked sign-in')
+  // console.log('clicked sign-in')
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#sign-out').on('click', onSignOut)

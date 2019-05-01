@@ -10,6 +10,7 @@ const createExerciseSuccess = function (data) {
   }, 5000)
   $('#message2').text('Congrats you exercise was logged!')
   // $('#create-exercise').trigger('reset')
+  $('form').trigger('reset')
 }
   // console.log(data)
   // store.exercise = data.exercise
@@ -36,7 +37,7 @@ const updateExerciseSuccess = (data) => {
 
 }
 const getExercisesSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 
 // $('#message').text('Exercises!')
   const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })

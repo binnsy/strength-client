@@ -13,12 +13,13 @@ const onCreateExercise = function (event) {
   const data = getFormFields(event.target)
   // console.log(data)
 
-  console.log(data)
+  // console.log(data)
   // if data.weight == String
   api.createExercise(data)
   // .then(ui.clearExercises(event))
     .then(function () { onGetExercises(event) })
     // $('form').trigger('reset')
+
   //  .then(ui.createExerciseSuccess)
     // .then(onGetExercises())
     // console.log('hi')
@@ -36,9 +37,9 @@ const onUpdateExercise = function (event) {
   $('.modal-open').removeClass()
   $('.fade').hide()
   const data = getFormFields(event.target)
-  console.log(event)
+  // console.log(event)
   const id = $(event.target).data('id')
-  console.log(id)
+  // console.log(id)
 
   api.updateExercise(data, id)
     .then(function () { onGetExercises(event) })
@@ -83,7 +84,7 @@ const onDeleteExercise = (event) => {
   // $('#message2').trigger('reset')
   // console.log('hi')
   const id = $(event.target).data('id')
-  console.log(id)
+  // console.log(id)
   // store.id = data.id
   // store.id = event.exercise
   // ui.clearExercises()

@@ -10,7 +10,7 @@ const events = require('./strength/events.js')
 
 $(() => {
   events.addHandlers()
-  console.log('worked')
+  // console.log('worked')
   userEvents.addHandlers()
 })
 

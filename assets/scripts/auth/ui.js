@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
   // setTimeout(function () {
   //   $('#message').fadeOut('slow')
   // }, 2000)
-  console.log('sign up successful')
+  // console.log('sign up successful')
   $('form').trigger('reset')
   $('#sign-up').hide()
 
@@ -37,7 +37,7 @@ const signInSuccess = function (data) {
   //   $('#message').fadeOut('slow')
   // }, 2000)
   store.user = data.user
-  console.log('sign in successful')
+  // console.log('sign in successful')
   $('form').trigger('reset')
   $('#sign-up').hide()
   $('.nav-buttons').show()
