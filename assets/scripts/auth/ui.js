@@ -88,7 +88,7 @@ const changePasswordFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  $('form').trigger('reset')
+  // $('form').trigger('reset')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
