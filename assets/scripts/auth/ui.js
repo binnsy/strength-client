@@ -13,7 +13,7 @@ const signUpSuccess = function (data) {
   $('form').trigger('reset')
   $('#sign-up').hide()
 
-  $('#sign-out').show()
+  $('#sign-out').hide()
   $('#reset').hide()
   $('#getGames').show()
   $('#sign-in').show()
@@ -88,18 +88,18 @@ const changePasswordFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  // $('form').trigger('reset')
+  $('form').trigger('reset')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
   }, 4000)
   $('#message2').text('Sign out successful!')
-
+  $('.content').empty()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#change-password').hide()
   // $('#message2').hide()
-  $('#content.content').hide()
+  // $('#content.content').hide()
   $('.nav-buttons').hide()
   $('#sign-out').hide()
   $('#getExercises').hide()
