@@ -3,10 +3,12 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Congrats! You have signed up successfully. Now sign in to get started!')
-  // setTimeout(function () {
-  //   $('#message').fadeOut('slow')
-  // }, 2000)
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 2000)
+  $('#message2').text('Congrats! You have signed up successfully. Now sign in to get started!')
+
   // console.log('sign up successful')
   $('form').trigger('reset')
   $('#sign-up').hide()
@@ -19,7 +21,11 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (data) {
-  $('#message').text('We had difficulty signing you up! Try again.')
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  $('#message2').text('We had difficulty signing you up! Try again.')
   $('form').trigger('reset')
   // $('#message').css('color', 'red')
 }
@@ -52,6 +58,10 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (data) {
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
   $('#message2').text('Sorry something went wrong! Please try again.')
   $('form').trigger('reset')
   // // $('#message').css('color', 'red')
@@ -59,6 +69,7 @@ const signInFailure = function (data) {
 }
 
 const changePasswordSuccess = function (data) {
+  $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
   }, 4000)
@@ -67,6 +78,7 @@ const changePasswordSuccess = function (data) {
 }
 
 const changePasswordFailure = function (data) {
+  $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
   }, 4000)
@@ -76,6 +88,7 @@ const changePasswordFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
+  $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
   }, 4000)
@@ -95,7 +108,11 @@ const signOutSuccess = function (data) {
 }
 
 const signOutFailure = function (data) {
-  $('#message').text('How about we try signing out again. Looks like something went wrong.')
+  $('#message2').show()
+  setTimeout(function () {
+    $('#message2').fadeOut('slow')
+  }, 4000)
+  $('#message2').text('How about we try signing out again. Looks like something went wrong.')
   $('form').trigger('reset')
 }
 
