@@ -13,8 +13,202 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-expand-l navbar-dark bg-dark">
-      <!-- <div class="container-fluid">
+<!--
+      <nav class="navbar navbarinverse">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Strength Log</a>
+      </div> -->
+      <!-- <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Sign In</a></li>
+    </ul> -->
+    <!-- <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+  </div> -->
+<nav>
+  <button type="button" class="btn btn-dark sign-in" data-toggle="modal" data-target="#signInModal">
+    Sign In
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalTitle">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+            <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-dark sign-up" data-toggle="modal" data-target="#signUpModal">
+    Sign Up
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalTitle">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="sign-up">
+              <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+              <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+              <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+              <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-dark sign-out" data-toggle="modal" data-target="#signOutModal">
+    Sign Out
+  </button>
+
+  <button type="button" class="btn btn-dark change-password" data-toggle="modal" data-target="#changePasswordModal">
+    Change Password
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePasswordModalTitle">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+            <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+            <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">ERROR</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Oops. Something went wrong. Please try again.
+    </div>
+  </div>
+  <!-- <div class="form-group has-error">
+     <div class="col-lg-12">
+        <label class="control-label" for="firstname">Name</label>
+        <input type="text" class="form-control required" id="firstname" name="firstname">
+      </div>
+  </div> -->
+
+  <!-- <div id="alert-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="alert-modal-title" class="modal-title"></h4>
+      </div>
+      <div id="alert-modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+</nav>
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signOutModalTitle">Sign Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+
+            <input type="reset" value="Reset">
+<button type="submit" class="btn btn-primary">Sign Out</button>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <form id="sign-up">
+    <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign Up!">
+    <input type="reset" value="Reset">
+  </form> -->
+
+  <!-- <form id="sign-in">
+    <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+    <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign In!">
+    <input type="reset" value="Reset">
+  </form> -->
+
+  <!-- <form id="change-password">
+    <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="change-password">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-out">
+    <input type="submit" value="Sign-Out!">
+  </form> -->
+      <!-- </nav> -->
+      <!-- <nav class="navbar navbar-expand-l navbar-dark bg-dark">
+      <! <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Strength Log</a>
       </div>
@@ -23,7 +217,7 @@
       <li><a href="#">Sign Up</a></li>
       <li><a href="#">Sign In</a></li>
     </ul>
-  </div> -->
+  </div>
 
   <form id="sign-up">
     <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
@@ -50,7 +244,7 @@
   <form id="sign-out">
     <input type="submit" value="Sign-Out!">
   </form>
-      </nav>
+      </nav> -->
       <div class="container">
       <h1>STRENGTH LOG</h1>
       <h3 id="motivational-quote">YOUR ONLY LIMIT IS YOU!</h3>

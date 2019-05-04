@@ -42,14 +42,24 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+
+// function alertModal(title, body) {
+//   // Display error message to the user in a modal
+//   $('#alert-modal-title').html(title)
+//   $('#alert-modal-body').html(body)
+//   $('#alert-modal').modal('show')
+// }
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   // console.log('clicked sign-up')
   $('#sign-in').on('submit', onSignIn)
   // console.log('clicked sign-in')
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-  $('#sign-out').on('click', onSignOut)
+  $('.sign-out').on('submit', onSignOut)
+  $('.sign-out').on('click', onSignOut)
+
+
 }
 
 module.exports = {
