@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
+  $('#signUpModal').modal('hide')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
@@ -21,16 +22,19 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (data) {
+  $('.toast').toast('show')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
   }, 4000)
   $('#message2').text('We had difficulty signing you up! Try again.')
   $('form').trigger('reset')
+
   // $('#message').css('color', 'red')
 }
 
 const signInSuccess = function (data) {
+  $('#signInModal').modal('hide')
   $('#message2').show()
   $('#message').show()
   $('#content.content').show()
@@ -45,19 +49,20 @@ const signInSuccess = function (data) {
   store.user = data.user
   // console.log('sign in successful')
   $('form').trigger('reset')
-  $('#sign-up').hide()
+  $('.sign-up').hide()
   $('.nav-buttons').show()
   // $('#reset').hide()
   // $('.row').hide()
   // $('.box').show()
-  $('#sign-out').show()
+  $('.sign-out').show()
   // $('#reset').show()
   $('#getExercises').show()
-  $('#change-password').show()
-  $('#sign-in').hide()
+  $('.change-password').show()
+  $('.sign-in').hide()
 }
 
 const signInFailure = function (data) {
+  $('.toast').toast('show')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
@@ -65,10 +70,11 @@ const signInFailure = function (data) {
   $('#message2').text('Sorry something went wrong! Please try again.')
   $('form').trigger('reset')
   // // $('#message').css('color', 'red')
-  $('#sign-up').show()
+  $('.sign-up').show()
 }
 
 const changePasswordSuccess = function (data) {
+  $('#changePasswordModal').modal('hide')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
@@ -78,6 +84,7 @@ const changePasswordSuccess = function (data) {
 }
 
 const changePasswordFailure = function (data) {
+  $('.toast').toast('show')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
@@ -95,13 +102,13 @@ const signOutSuccess = function (data) {
   }, 4000)
   $('#message2').text('Sign out successful!')
   $('.content').empty()
-  $('#sign-in').show()
-  $('#sign-up').show()
-  $('#change-password').hide()
+  $('.sign-in').show()
+  $('.sign-up').show()
+  $('.change-password').hide()
   // $('#message2').hide()
   // $('#content.content').hide()
   $('.nav-buttons').hide()
-  $('#sign-out').hide()
+  $('.sign-out').hide()
   $('#getExercises').hide()
   // $('#message2').hide()
 
@@ -109,6 +116,7 @@ const signOutSuccess = function (data) {
 }
 
 const signOutFailure = function (data) {
+  $('.toast').toast('show')
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')

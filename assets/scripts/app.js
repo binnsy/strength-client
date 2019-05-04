@@ -16,7 +16,7 @@ $(() => {
 
 $('.nav-buttons').hide()
 // $('#reset').hide()
-$('#sign-out').hide()
+$('.sign-out').hide()
 // $('.row').hide()
-$('#change-password').hide()
+$('.change-password').hide()
 // })

@@ -111,6 +111,8 @@ const addHandlers = function () {
   $('#content').on('click', '.delete', onDeleteExercise)
   $('#content').on('submit', '.update-form', onUpdateExercise)
 
+  // $('#modal').
+
   // $('.fade').hide()
   // $('.fade').show('click', '.update-modal')
   // $('.fade').hide('click', '#content')
