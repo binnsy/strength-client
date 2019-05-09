@@ -12,7 +12,7 @@ const signUpSuccess = function (data) {
 
   // console.log('sign up successful')
   $('form').trigger('reset')
-  $('#sign-up').hide()
+  $('.sign-up').hide()
 
   $('#sign-out').hide()
   $('#reset').hide()
@@ -22,12 +22,19 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (data) {
-  $('.toast').toast('show')
-  $('#message2').show()
+  // $('.toast').toast('show')
+
+  // $('#message2').show()
+  // setTimeout(function () {
+  //   $('#message2').fadeOut('slow')
+  // }, 4000)
+  $('#signUpModalMessage').show()
   setTimeout(function () {
-    $('#message2').fadeOut('slow')
-  }, 4000)
-  $('#message2').text('We had difficulty signing you up! Try again.')
+    $('#signUpModalMessage').fadeOut('slow')
+  }, 6000)
+  $('#signUpModalMessage').text('Sorry. We had difficulty signing you up. It is possible that user name is taken or your passwords did not match. ')
+  $('#signUpModalMessage').css('color', 'red')
+  // $('#message2').text('We had difficulty signing you up! Try again.')
   $('form').trigger('reset')
 
   // $('#message').css('color', 'red')
@@ -62,12 +69,18 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (data) {
-  $('.toast').toast('show')
-  $('#message2').show()
+  // $('.toast').toast('show')
+  $('#signInModalMessage').show()
   setTimeout(function () {
-    $('#message2').fadeOut('slow')
+    $('#signInModalMessage').fadeOut('slow')
   }, 4000)
-  $('#message2').text('Sorry something went wrong! Please try again.')
+  $('#signInModalMessage').text('Sorry. We had difficulty signing you in. Please try again.')
+  $('#signInModalMessage').css('color', 'red')
+  // $('#message2').show()
+  // setTimeout(function () {
+  //   $('#message2').fadeOut('slow')
+  // }, 4000)
+  // $('#message2').text('Sorry something went wrong! Please try again.')
   $('form').trigger('reset')
   // // $('#message').css('color', 'red')
   $('.sign-up').show()
@@ -84,12 +97,12 @@ const changePasswordSuccess = function (data) {
 }
 
 const changePasswordFailure = function (data) {
-  $('.toast').toast('show')
-  $('#message2').show()
+  // $('.toast').toast('show')
+  $('#changePasswordModalMessage').show()
   setTimeout(function () {
-    $('#message2').fadeOut('slow')
+    $('#changePasswordModalMessage').fadeOut('slow')
   }, 4000)
-  $('#message2').text('Change password failure. Please try again.')
+  $('#changePasswordModalMessage').text('Change password failure. Please try again.')
   // $('#message').css('color', 'red')
   $('form').trigger('reset')
 }
