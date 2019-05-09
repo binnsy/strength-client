@@ -12,7 +12,7 @@ const signUpSuccess = function (data) {
 
   // console.log('sign up successful')
   $('form').trigger('reset')
-  $('.sign-up').hide()
+  // $('.sign-up').hide()
 
   $('#sign-out').hide()
   $('#reset').hide()
@@ -103,6 +103,7 @@ const changePasswordFailure = function (data) {
     $('#changePasswordModalMessage').fadeOut('slow')
   }, 4000)
   $('#changePasswordModalMessage').text('Change password failure. Please try again.')
+  $('#changePasswordModalMessage').css('color', 'red')
   // $('#message').css('color', 'red')
   $('form').trigger('reset')
 }
