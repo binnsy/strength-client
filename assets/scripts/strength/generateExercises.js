@@ -1,4 +1,4 @@
-let exercises = [
+const exercises = [
   '10 burpees, 10 pushups, 25 bicycle crunches',
   '10 tri dips, 20 split squat jumps, 25 dead bugs',
   '20 sumo squats, 50 reverse crunches, 10 bent over rows',
