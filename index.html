@@ -10,9 +10,11 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
     <body>
-
+<div class="page-container">
+  <div id="content-wrap">
 <!--
       <nav class="navbar navbarinverse">
       <div class="container-fluid">
@@ -283,9 +285,9 @@
       <div class="nav-buttons">
         <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
         <form id="create-exercise">
-          <input type="text" class="form-control" name="exercise[exercise]" placeholder="Exercise name">
+          <input type="text" class="form-control" name="exercise[exercise]" placeholder="Exercise Name">
           <input type="date" class="form-control" name="exercise[date]" placeholder="Date">
-          <input type="text" class="form-control" name="exercise[description]" placeholder="Exercise description">
+          <input type="text" class="form-control" name="exercise[description]" placeholder="Exercise Description">
           <input type="text" class="form-control" name="exercise[muscle_group]" placeholder="Muscle Group">
           <!-- <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" name="exercise[muscle_group]" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -299,17 +301,72 @@
   </div>
 </div> -->
           <input type="text" class="form-control" name="exercise[time]" placeholder="Time">
-          <input type="text" class="form-control" name="exercise[reps]" placeholder="Number of reps">
+          <input type="text" class="form-control" name="exercise[reps]" placeholder="Number of Reps">
           <input type="text" class="form-control" name="exercise[weight]" placeholder="Weight">
           <input id= "create" class="btn btn-dark" type="submit" value="Create Exercise!">
         </form>
         <div class="main-page-buttons">
-        <button id="getExercisesButton" class="btn btn-outline-dark">Exercise Log!</button>
+          <div>
+            <button onclick ="generateExercises()" id="generateExercises" class="btn btn-outline-dark"><strong>Get Exercise Ideas!</strong></button>
+            <button id="clearGenerateExercisesButton" class="btn btn-outline-dark">Clear Exercise Ideas!</button>
+          </div>
+          <div>
+        <button id="getExercisesButton" class="btn btn-outline-dark"><strong>Exercise Log!</strong></button>
         <button id="clearExercisesButton" class="btn btn-outline-dark">Clear Exercises!</button>
+      </div>
+      <div>
+        <button id="setTimer" class="btn btn-outline-dark"><strong> Set Timer!</strong></button>
+
+      </div>
+
+      <!-- TIMER -->
+      <div id="timer">
+        <!-- <h4 id=time>Time</h4>
+        <a href = "#" class="btn btn-info" id="start">Start</a>
+
+        <a href = "#" class="btn btn-info" id="minusClock">-</a>
+        <h2 id='timeType'></h2>
+        <h4 id="num">5</h4>
+        <a href = "#" class="btn btn-info" id="addClock">+</a>
+      </br>
+        <a href = "#" class="btn btn-info" id="reset">Reset</a> -->
+  <button id="hideTimerButton" class="btn btn-outline-dark">X</button>
+        <form id="timer-form">
+        <!-- <input type="integer" class="userTimer" name="timerHours" placeholder="hours title" required> -->
+        <!-- <input type="integer" class="userTimer" name="timerMinutes" placeholder="minutes" > -->
+        <input type="integer" class="userTimer" name="timerSeconds" placeholder="seconds">
+
+      <div id="timer-buttons">
+        <!-- <button id="stop">stop</button> -->
+        <button id="timer-btn" type="submit" class="btn btn-outline-dark">Start Timer</button>
+      </form>
+    </div>
+
+      <div>
+        <button id="clear">clear timer</button>
+      </div>
+  <div id="displayTimer">
+    <!-- <span id="minutes">00</span>
+    <span id="middle">:</span>
+    <span id="minutes">25</span> -->
+    <span id="middle">:</span>
+    <span id="seconds">00</span>
+  </div>
+
+
+      </div>
+        <!-- <button onclick ="generateExercises()">Get Workout Ideas</button> -->
+        <script type="text/javascript" src="./assets/scripts/strength/generateExercises.js"></script>
+        <div id="generateExercisesDisplay" class="generateExercisesDisplay">
+        </div>
+
+        <div id="content" class="content"></div>
       </div>
         <!-- <button id="deleteExercise" class="btn btn-danger">Delete Exercises</button> -->
       </div>
-      <div id="content" class="content"></div>
-      <footer> created by Alice </footer>
+
+    </div>
+      <footer id="footer"> created by Alice </footer>
+    </div>
     </body>
 </html>

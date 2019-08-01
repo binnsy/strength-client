@@ -1,9 +1,9 @@
 
 const store = require('../store')
 const getExercisesTemplate = require('../templates/get-exercises.handlebars')
+const getExercisesFile = require('./generateExercises')
 //
 const createExerciseSuccess = function (data) {
-
   $('#message2').show()
   setTimeout(function () {
     $('#message2').fadeOut('slow')
@@ -12,8 +12,8 @@ const createExerciseSuccess = function (data) {
   // $('#create-exercise').trigger('reset')
   $('form').trigger('reset')
 }
-  // console.log(data)
-  // store.exercise = data.exercise
+// console.log(data)
+// store.exercise = data.exercise
 const createExerciseFailure = function (data) {
   $('#message2').show()
   setTimeout(function () {
@@ -34,8 +34,15 @@ const updateExerciseSuccess = (data) => {
   // $('.content').empty()
   // const getExercisesHtml = getExercisesTemplate({ exercises: data.exercises })
   // $('.content').append(getExercisesHtml)
-
 }
+// const exercises = exercises
+// console.log(exercises)
+// const generateExercises = (data) => {
+//   console.log(data)
+//   const generateExercisesHtml = getExercisesFile({ exercises: data.exercises })
+//   $('.generateExercisesDisplay').append(generateExercisesHtml)
+// }
+
 const getExercisesSuccess = (data) => {
   // console.log(data)
 
@@ -49,10 +56,25 @@ const clearExercises = () => {
   $('.content').empty()
 }
 
+const clearGenerateExercises = () => {
+  $('.generateExercisesDisplay').empty()
+  $('.generateExercisesDisplay').hide()
+}
+
 const failure = (error) => {
   console.error(error)
   // $('#message').text('error')
 }
+
+// const hideTimer = () => {
+//   console.log('hi')
+//
+//   // clearInterval(timer)
+//   $('form').trigger('reset')
+//   // $('#displayTimer').text('')
+//   // $('#displayTimer').empty()
+//   $('#timer').hide()
+// }
 
 // our songs data
 // const data = { songs: [...] }
@@ -69,5 +91,7 @@ module.exports = {
   getExercisesSuccess,
   clearExercises,
   failure,
-  updateExerciseSuccess
+  updateExerciseSuccess,
+  clearGenerateExercises
+  // hideTimer
 }
