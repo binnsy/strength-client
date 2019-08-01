@@ -13,8 +13,9 @@ const exercises = [
 function generateExercises () {
   const random = (Math.random() * exercises.length) | 0
   console.log(random)
+  const exercise = exercises[random]
   $('.generateExercisesDisplay').show()
-  document.getElementById('generateExercisesDisplay').innerHTML = exercises[random]
+  document.getElementById('generateExercisesDisplay').innerHTML = exercise
 
   // $('.generateExercisesDisplay').append(exercises)
   // $('.generateExercisesDisplay').text(exercises[randomNum])
