@@ -32,6 +32,11 @@ const onClearExercises = (event) => {
   ui.clearExercises()
 }
 
+const onClearGenerateExercises = (event) => {
+  event.preventDefault()
+  ui.clearGenerateExercises()
+}
+
 const onUpdateExercise = function (event) {
   event.preventDefault()
   $('.modal-open').removeClass()
@@ -48,7 +53,7 @@ const onUpdateExercise = function (event) {
     // .then(onClearExercises(event))
     // .then(onGetExercises(event))
   // ui.clearExercises()
-  //.then(() => onGetExercises(event))
+  // .then(() => onGetExercises(event))
   // .then(ui.catch)
   // console.log(event)
   // console.log('click')
@@ -66,13 +71,20 @@ const onUpdateExercise = function (event) {
 // // Get all exercises user logged in has created
 const onGetExercises = function (event) {
   event.preventDefault()
-  // console.log(event)
-  // console.log('hi')
   ui.clearExercises()
   api.getExercises()
     .then(ui.getExercisesSuccess)
     .catch(ui.failure)
 }
+
+// const onGenerateExercises = function (event) {
+//   event.preventDefault()
+//   ui.generateExercises()
+// }
+// // function newExercise() {
+//   // let randomNum = Math.floor(Math.random() * (exercises.length))
+// // }
+// }
 
 const onDeleteExercise = (event) => {
   event.preventDefault()
@@ -103,13 +115,127 @@ const onDeleteExercise = (event) => {
     // .catch(ui.failure)
 }
 
+const onSetTimer = (event) => {
+  event.preventDefault()
+  $('#timer').show()
+}
+function makeMeTwoDigits (timerSeconds) {
+  return (timerSeconds < 10 ? '0' : '') + timerSeconds
+}
+
+let timer
+const userTimer = function (event) {
+  event.preventDefault()
+  // this.reset()
+  // $('#timer-form').reset()
+  const data = getFormFields(event.target)
+  console.log(data)
+  console.log('=========')
+
+  if (timer) {
+    clearInterval(timer)
+  }
+  let timerSeconds = parseFloat(data.timerSeconds) + 1
+
+  timer = setInterval(function () {
+    // console.log(timerSeconds)
+    // console.log(data)
+    if (timerSeconds > 0) {
+      timerSeconds--
+      $('#displayTimer').text(':' + (makeMeTwoDigits(timerSeconds)) + ' seconds remaining')
+    } else {
+      clearInterval(timer)
+      $('#displayTimer').text('Next Exercise!')
+    }
+  }, 1000)
+}
+
+const onClearTimer = (event) => {
+  $('#displayTimer').text('')
+  $('.userTimer').empty()
+  clearInterval(timer)
+}
+
+const onHideTimer = (event) => {
+  event.preventDefault()
+  clearInterval(timer)
+  $('form').trigger('reset')
+  $('#displayTimer').text('')
+  $('#displayTimer').empty()
+  $('#timer').hide()
+}
+
+// clearInterval(timer)
+// const timerSeconds = 0
+// clearInterval(userTimer)
+
+// $('#displayTimer').text(': 00')
+// return timer
+// $('form').reset()
+// return timer
+// clearInterval(timer)
+// }
+
+// const onStopTimer = () => {
+//   clearInterval(timer)
+// }
+// $(document).ready(function() {
+// let count = parseInt($('#num').html)
+//
+// const onMinusClock = (event) => {
+//   if (count > 5) {
+//     count -= 5
+//     $('#num').html(count)
+//     console.log(count)
+//   }
+// }
+//
+// const onAddClock = (event) => {
+//   count += 5
+//   $('#num').html(count)
+//   console.log(count)
+// }
+//
+// const onStart = (event) => {
+//   let counter = setInterval(timer, 1000)
+//
+//   function timer () {
+//     $('#start, #minusClock, #addClock').hide()
+//
+//     $('#timeType').html('Time : ')
+//     count -= 1
+//     if (count === 0) {
+//       clearInterval(counter)
+//     }
+//   }
+// }
+//
+// const onReset = (event) => {
+//   console.log('reset')
+//   count = 25
+//   $('#num').html(count)
+//   $('#start, #minusClock, #addClock').show()
+//
+// }
+
 const addHandlers = function () {
 //  $('#create').on('click', onCreateExercise)
   $('#create-exercise').on('submit', onCreateExercise)
   $('#getExercisesButton').on('click', onGetExercises)
   $('#clearExercisesButton').on('click', onClearExercises)
+  $('#hideTimerButton').on('click', onHideTimer)
+  // $('#generateExercisesButton').on('click', onGenerateExercises)
+  $('#clearGenerateExercisesButton').on('click', onClearGenerateExercises)
   $('#content').on('click', '.delete', onDeleteExercise)
   $('#content').on('submit', '.update-form', onUpdateExercise)
+  $('#timer-form').on('submit', userTimer)
+  $('#setTimer').on('click', onSetTimer)
+  $('#clear').on('click', onClearTimer)
+  // $('#stop').on('click', onStopTimer)
+  // $('#minusClock').on('click', onMinusClock)
+  // $('#addClock').on('click', onAddClock)
+  // $('#start').on('click', onStart)
+  // $('#reset').on('click', onReset)
 
   // $('#modal').
 

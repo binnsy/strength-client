@@ -45,11 +45,13 @@ const signInSuccess = function (data) {
   $('#message2').show()
   $('#message').show()
   $('#content.content').show()
+  $('.generateExercisesDisplay').hide()
   setTimeout(function () {
     $('#message').fadeOut('slow')
   }, 2000)
   $('#message').text('Congrats you have successfully signed in!')
   $('#message2').text('Create an exercise or view your exercise log!')
+  $('#timer').hide()
   // setTimeout(function () {
   //   $('#message').fadeOut('slow')
   // }, 2000)
