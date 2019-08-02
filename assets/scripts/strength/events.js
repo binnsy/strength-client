@@ -4,8 +4,8 @@ const getFormFields =
 require('./../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
-const store = require('../store')
-// const exercises = require('./generateExercises')
+// const store = require('../store')
+// const exercises = require('./generateExercises.js')
 
 const onCreateExercise = function (event) {
   event.preventDefault()
@@ -210,17 +210,18 @@ const onHideTimer = (event) => {
 //
 // }
 
-const onGenerateExercises = function (event) {
-  event.preventDefault()
-  // function generateExercises () {
-  const random = (Math.random() * exercises.length) | 0
-  console.log(random)
-  const exercise = exercises[random]
-  $('.generateExercisesDisplay').show()
-  document.getElementById('generateExercisesDisplay').innerHTML = exercise
-
-  // ui.generateExercises()
-}
+// const onGenerateExercises = function (event) {
+//   event.preventDefault()
+//   // function generateExercises () {
+//   const random = (Math.random() * exercises.length) | 0
+//   console.log(random)
+//   const exercise = exercises[random]
+//   console.log(exercise)
+//   $('.generateExercisesDisplay').show()
+//   document.getElementById('generateExercisesDisplay').innerHTML = exercise
+//
+//   // ui.generateExercises()
+// }
 // function newExercise() {
 // let randomNum = Math.floor(Math.random() * (exercises.length))
 // }
@@ -238,7 +239,7 @@ const addHandlers = function () {
   $('#setTimer').on('click', onSetTimer)
   $('#clear').on('click', onClearTimer)
 
-  $('#generateExercisesButton').on('click', onGenerateExercises)
+  // $('#generateExercisesButton').on('click', onGenerateExercises)
 
   // $('#stop').on('click', onStopTimer)
   // $('#minusClock').on('click', onMinusClock)

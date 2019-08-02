@@ -1,7 +1,7 @@
 
-const store = require('../store')
+// const store = require('../store')
 const getExercisesTemplate = require('../templates/get-exercises.handlebars')
-const getExercisesFile = require('./generateExercises')
+// const getExercisesFile = require('./generateExercises')
 //
 const createExerciseSuccess = function (data) {
   $('#message2').show()
