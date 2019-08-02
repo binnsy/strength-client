@@ -5,6 +5,7 @@ require('./../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
+// const exercises = require('./generateExercises')
 
 const onCreateExercise = function (event) {
   event.preventDefault()
@@ -76,15 +77,6 @@ const onGetExercises = function (event) {
     .then(ui.getExercisesSuccess)
     .catch(ui.failure)
 }
-
-// const onGenerateExercises = function (event) {
-//   event.preventDefault()
-//   ui.generateExercises()
-// }
-// // function newExercise() {
-//   // let randomNum = Math.floor(Math.random() * (exercises.length))
-// // }
-// }
 
 const onDeleteExercise = (event) => {
   event.preventDefault()
@@ -218,19 +210,36 @@ const onHideTimer = (event) => {
 //
 // }
 
+const onGenerateExercises = function (event) {
+  event.preventDefault()
+  // function generateExercises () {
+  const random = (Math.random() * exercises.length) | 0
+  console.log(random)
+  const exercise = exercises[random]
+  $('.generateExercisesDisplay').show()
+  document.getElementById('generateExercisesDisplay').innerHTML = exercise
+
+  // ui.generateExercises()
+}
+// function newExercise() {
+// let randomNum = Math.floor(Math.random() * (exercises.length))
+// }
+
 const addHandlers = function () {
 //  $('#create').on('click', onCreateExercise)
   $('#create-exercise').on('submit', onCreateExercise)
   $('#getExercisesButton').on('click', onGetExercises)
   $('#clearExercisesButton').on('click', onClearExercises)
   $('#hideTimerButton').on('click', onHideTimer)
-  // $('#generateExercisesButton').on('click', onGenerateExercises)
   $('#clearGenerateExercisesButton').on('click', onClearGenerateExercises)
   $('#content').on('click', '.delete', onDeleteExercise)
   $('#content').on('submit', '.update-form', onUpdateExercise)
   $('#timer-form').on('submit', userTimer)
   $('#setTimer').on('click', onSetTimer)
   $('#clear').on('click', onClearTimer)
+
+  $('#generateExercisesButton').on('click', onGenerateExercises)
+
   // $('#stop').on('click', onStopTimer)
   // $('#minusClock').on('click', onMinusClock)
   // $('#addClock').on('click', onAddClock)
