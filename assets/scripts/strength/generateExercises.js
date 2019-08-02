@@ -31,7 +31,7 @@ function generateExercises () {
 //   i = 0;
 // })
 // })
-
+document.getElementById('generateExercisesButton').addEventListener('click', generateExercises, false)
 //   document.getElementById('generateExercisesDisplay').innerHTML = exercise
 // $('.generateExercisesDisplay').append(exercises)
 // $('.generateExercisesDisplay').text(exercises[randomNum])
