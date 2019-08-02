@@ -1,3 +1,5 @@
+// const exercises
+
 const exercises = [
   '10 burpees, 10 pushups, 25 bicycle crunches',
   '10 tri dips, 20 split squat jumps, 25 dead bugs',
@@ -10,12 +12,23 @@ const exercises = [
   '60 russian twists, 10 rotational pushups, 10 deadlifts'
 ]
 
-// function generateExercises () {
-//   const random = (Math.random() * exercises.length) | 0
-//   console.log(random)
-//   const exercise = exercises[random]
-//   $('.generateExercisesDisplay').show()
+$(document).ready(function () {
+  function generateExercises () {
+    const random = (Math.random() * exercises.length) | 0
+    console.log(random)
+    const exercise = exercises[random]
+    console.log(exercise)
+  }
+  $('.generateExercisesDisplay').show()
+
+  $('#generateExercisesButton').click(function () {
+    generateExercises()
+    // i++;
+    // if (i >= x.length) {
+    //   i = 0;
+  })
+})
+
 //   document.getElementById('generateExercisesDisplay').innerHTML = exercise
 // $('.generateExercisesDisplay').append(exercises)
 // $('.generateExercisesDisplay').text(exercises[randomNum])
-// }
