@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Strength Log</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- <script type="text/javascript" src="script.js"></script> -->
+
+    </head>
+    <body>
+<div class="page-container">
+  <div id="content-wrap">
+<!--
+      <nav class="navbar navbarinverse">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Strength Log</a>
+      </div> -->
+      <!-- <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Sign In</a></li>
+    </ul> -->
+    <!-- <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+  </div> -->
+<nav>
+  <button type="button" class="btn btn-dark sign-in" data-toggle="modal" data-target="#signInModal">
+    Sign In
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalTitle">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <div><h7 class="modal-title" id="signInModalMessage"></h7></div>
+            <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+            <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-dark sign-up" data-toggle="modal" data-target="#signUpModal">
+    Sign Up
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalTitle">Sign Up</h5>
+
+
+          <!-- <div id="signUpModalTitle">
+          </div> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="security"><h7>For security purposes, please use a fake account</h7></div>
+            <div><h7 class="modal-title" id="signUpModalMessage"></h7></div>
+            <form id="sign-up">
+              <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+              <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+              <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+              <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-dark sign-out" data-toggle="modal" data-target="#signOutModal">
+    Sign Out
+  </button>
+
+  <button type="button" class="btn btn-dark change-password" data-toggle="modal" data-target="#changePasswordModal">
+    Change Password
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePasswordModalTitle">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div><h7 class="modal-title" id="changePasswordModalMessage"></h7></div>
+          <form id="change-password">
+            <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+            <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+            <input type="reset" value="Reset">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">ERROR</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Oops. Something went wrong. Please try again.
+    </div>
+  </div>
+  <!-- <div class="form-group has-error">
+     <div class="col-lg-12">
+        <label class="control-label" for="firstname">Name</label>
+        <input type="text" class="form-control required" id="firstname" name="firstname">
+      </div>
+  </div> -->
+
+  <!-- <div id="alert-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="alert-modal-title" class="modal-title"></h4>
+      </div>
+      <div id="alert-modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+</nav>
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signOutModalTitle">Sign Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+
+            <input type="reset" value="Reset">
+<button type="submit" class="btn btn-primary">Sign Out</button>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <form id="sign-up">
+    <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign Up!">
+    <input type="reset" value="Reset">
+  </form> -->
+
+  <!-- <form id="sign-in">
+    <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+    <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign In!">
+    <input type="reset" value="Reset">
+  </form> -->
+
+  <!-- <form id="change-password">
+    <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="change-password">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-out">
+    <input type="submit" value="Sign-Out!">
+  </form> -->
+      <!-- </nav> -->
+      <!-- <nav class="navbar navbar-expand-l navbar-dark bg-dark">
+      <! <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Strength Log</a>
+      </div>
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Sign In</a></li>
+    </ul>
+  </div>
+
+  <form id="sign-up">
+    <input type="email" name="credentials[email]" placeholder="Email" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign Up!">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-in">
+    <input type="email" name="credentials[email]" autocorrect="off" autocapitalize="off" placeholder="Email" required>
+    <input type="password" name="credentials[password]" placeholder="Password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="Sign In!">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="change-password">
+    <input type="text" name="passwords[old]" placeholder="old password" autocorrect="off" autocapitalize="off">
+    <input type="text" name="passwords[new]" placeholder="new password" autocorrect="off" autocapitalize="off">
+    <input type="submit" value="change-password">
+    <input type="reset" value="Reset">
+  </form>
+
+  <form id="sign-out">
+    <input type="submit" value="Sign-Out!">
+  </form>
+      </nav> -->
+      <div class="container">
+      <h1>STRENGTH LOG</h1>
+      <h3 id="motivational-quote">YOUR ONLY LIMIT IS YOU!</h3>
+
+      <!-- <div id="createExerciseDiv">
+        <button id="createExercise">Create Exercises</button>
+      </div> -->
+      <!-- <div id="message">
+      </div>
+      <div id="deleteExerciseDiv">
+
+      </div>
+      <div id="message">
+      </div> -->
+      <!-- <div id="getExercisesDiv">
+        <button id="getExercises">Get Exercises</button>
+      </div> -->
+      <!-- <div id="message">
+      </div>
+      <div id="updateExerciseDiv">
+-->
+      </div>
+
+      <div id="message">
+      </div>
+      <div id="message2">
+      </div>
+      <div class="nav-buttons">
+        <!-- <button id="createExercise" class="btn btn-success">Create Exercises</button> -->
+        <form id="create-exercise">
+          <input type="text" class="form-control" name="exercise[exercise]" placeholder="Exercise Name">
+          <input type="date" class="form-control" name="exercise[date]" placeholder="Date">
+          <input type="text" class="form-control" name="exercise[description]" placeholder="Exercise Description">
+          <input type="text" class="form-control" name="exercise[muscle_group]" placeholder="Muscle Group">
+          <!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" name="exercise[muscle_group]" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Muscle Group
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Arms</a>
+    <a class="dropdown-item" href="#">Core</a>
+    <a class="dropdown-item" href="#">Legs</a>
+    <a class="dropdown-item" href="#">Glutes</a>
+  </div>
+</div> -->
+          <input type="text" class="form-control" name="exercise[time]" placeholder="Time">
+          <input type="text" class="form-control" name="exercise[reps]" placeholder="Number of Reps">
+          <input type="text" class="form-control" name="exercise[weight]" placeholder="Weight">
+          <input id= "create" class="btn btn-dark" type="submit" value="Create Exercise!">
+        </form>
+        <div class="main-page-buttons">
+          <div>
+            <!-- <script type="text/javascript" src="script.js"></script> -->
+
+            <button type="button" id="generateExercisesButton" class="btn btn-outline-dark"><strong>Get Exercise Ideas!</strong></button>
+
+            <button id="clearGenerateExercisesButton" class="btn btn-outline-dark">Clear Exercise Ideas!</button>
+          </div>
+          <div>
+        <button id="getExercisesButton" class="btn btn-outline-dark"><strong>Exercise Log!</strong></button>
+        <button id="clearExercisesButton" class="btn btn-outline-dark">Clear Exercises!</button>
+      </div>
+      <div>
+        <button id="setTimer" class="btn btn-outline-dark"><strong> Set Timer!</strong></button>
+
+      </div>
+
+      <!-- TIMER -->
+      <div id="timer">
+        <!-- <h4 id=time>Time</h4>
+        <a href = "#" class="btn btn-info" id="start">Start</a>
+
+        <a href = "#" class="btn btn-info" id="minusClock">-</a>
+        <h2 id='timeType'></h2>
+        <h4 id="num">5</h4>
+        <a href = "#" class="btn btn-info" id="addClock">+</a>
+      </br>
+        <a href = "#" class="btn btn-info" id="reset">Reset</a> -->
+        <button type="button" id="hideTimerButton" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+  <!-- <button id="hideTimerButton" class="btn btn-outline-dark">X</button> -->
+        <form id="timer-form">
+        <!-- <input type="integer" class="userTimer" name="timerHours" placeholder="hours title" required> -->
+        <!-- <input type="integer" class="userTimer" name="timerMinutes" placeholder="minutes" > -->
+        <input type="integer" class="userTimer" name="timerSeconds" placeholder="seconds">
+
+      <div id="timer-buttons">
+        <!-- <button id="stop">stop</button> -->
+        <button id="timer-btn" type="submit" class="btn btn-outline-dark">Start Timer</button>
+      </form>
+
+    </div>
+
+      <div>
+<button id="clear" class="btn btn-outline-dark">Clear Timer</button>
+      </div>
+  <div id="displayTimer">
+    <!-- <span id="minutes">00</span>
+    <span id="middle">:</span>
+    <span id="minutes">25</span> -->
+    <span id="middle">:</span>
+    <span id="seconds">00</span>
+  </div>
+
+
+      </div>
+        <!-- <button onclick ="generateExercises()">Get Workout Ideas</button> -->
+        <div id="generateExercisesDisplay" class="generateExercisesDisplay">
+        </div>
+
+        <div id="content" class="content"></div>
+      </div>
+        <!-- <button id="deleteExercise" class="btn btn-danger">Delete Exercises</button> -->
+      </div>
+
+    </div>
+      <footer id="footer"> Created By Alice </footer>
+      <!-- <script type="text/javascript" src="script.js"></script> -->
+
+    </div>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+
+    </body>
+</html>
