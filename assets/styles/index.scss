@@ -24,7 +24,7 @@ h1 {
 .btn {
   padding: 5px;
 }
-#getExercisesButton, #clearExercisesButton, #generateExercises, #clearGenerateExercisesButton, #setTimer {
+#getExercisesButton, #clearExercisesButton, #generateExercises, #clearGenerateExercisesButton, #setTimer, #generateExercisesButton {
 background-color: #e7e7e7;
 margin-top: 5px;
 }
@@ -158,6 +158,10 @@ input {
 //   height:60px;   /* Height of the footer */
 //    // background:#6cf;
 // }
+#timer-btn {
+  background-color: #e7e7e7;
+  margin-top: 5px;
+}
 #footer {
   position: relative;
   bottom: 0;
