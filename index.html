@@ -334,7 +334,10 @@
         <a href = "#" class="btn btn-info" id="addClock">+</a>
       </br>
         <a href = "#" class="btn btn-info" id="reset">Reset</a> -->
-  <button id="hideTimerButton" class="btn btn-outline-dark">X</button>
+        <button type="button" id="hideTimerButton" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+  <!-- <button id="hideTimerButton" class="btn btn-outline-dark">X</button> -->
         <form id="timer-form">
         <!-- <input type="integer" class="userTimer" name="timerHours" placeholder="hours title" required> -->
         <!-- <input type="integer" class="userTimer" name="timerMinutes" placeholder="minutes" > -->
@@ -344,11 +347,11 @@
         <!-- <button id="stop">stop</button> -->
         <button id="timer-btn" type="submit" class="btn btn-outline-dark">Start Timer</button>
       </form>
-        <button id="clear">clear timer</button>
+
     </div>
 
       <div>
-
+<button id="clear" class="btn btn-outline-dark">Clear Timer</button>
       </div>
   <div id="displayTimer">
     <!-- <span id="minutes">00</span>
